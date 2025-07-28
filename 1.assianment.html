@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temparature check</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        text-align: center;
+        padding: 50px;
+    }
+    input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        margin-right: 10px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #218838;
+    }
+    p {
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
+    h1 {
+        color: #333;
+    }
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <h1>Temperature Check</h1>
+    <input type="text" id="tempInput" placeholder="Enter temperature in Celsius">
+    <button id="checkTemp" onclick="checkTemperature()">Check Temperature</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function checkTemperature(){
+        let temp = document.getElementById("tempInput").value;
+        let result = document.getElementById("result");
+        if (temp === "") {
+            result.innerHTML = "Please enter a temperature.";
+            result.style.color = "black";
+            return;
+        }
+        if (temp < 0) {
+            result.innerHTML = "It's freezing!";
+            result.style.color = "blue";
+        } else if (temp >= 0 && temp <= 20) {
+            result.innerHTML = "It's cold.";
+            result.style.color = "lightblue";
+        } else if (temp > 20 && temp <= 30) {
+            result.innerHTML = "It's warm.";
+            result.style.color = "orange";
+        } else {
+            result.innerHTML = "It's hot!";
+            result.style.color = "red";
+        }
+       
+
+    }
+</script>
+    

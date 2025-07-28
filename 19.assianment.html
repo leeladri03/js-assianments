@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic list from array</title>
+</head>
+<body>
+    <h1>Dynamic List from Array</h1>
+    <button onclick="generateList()">Generate List</button>\
+    <ul id="itemList"></ul>
+    <script>
+        const items = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+
+        function generateList() {
+            const itemList = document.getElementById("itemList");
+            itemList.innerHTML = ""; // Clear existing list
+            items.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                itemList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade calculator</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        text-align: center;
+        padding: 50px;
+    }
+    input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        margin-right: 10px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #result {
+        font-size: 1.2em;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <h1>Grade Calculator</h1>
+    <input type="text" id="marksInput" placeholder="Enter marks (0-100)">
+    <button id="calculateGrade" onclick="calculateGrade()">Calculate Grade</button>
+    <p id="result"></p>
+
+    
+</body>
+</html>
+<script>
+    function calculateGrade() {
+        let marks = document.getElementById("marksInput").value;
+        let result = document.getElementById("result");
+        
+        if (marks === "") {
+            result.innerHTML = "Please enter your marks.";
+            result.style.color = "black";
+            return;
+        }
+        
+        marks = parseInt(marks);
+        if (isNaN(marks) || marks < 0 || marks > 100) {
+            result.innerHTML = "Please enter a valid number between 0 and 100.";
+            result.style.color = "red";
+            return;
+        }
+        
+        if (marks >= 90) {
+            result.innerHTML = "Your grade is A.";
+            result.style.color = "green";
+        } else if (marks >= 80) {
+            result.innerHTML = "Your grade is B.";
+            result.style.color = "blue";
+        } else if (marks >= 70) {
+            result.innerHTML = "Your grade is C.";
+            result.style.color = "orange";
+        } else if (marks >= 60) {
+            result.innerHTML = "Your grade is D.";
+            result.style.color = "purple";
+        } else {
+            result.innerHTML = "You failed. Your grade is F.";
+            result.style.color = "red";
+        }
+    }
+</script>

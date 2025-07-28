@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age restriction</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        text-align: center;
+        padding: 50px;
+    }
+    input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        margin-right: 10px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #c82333;
+    }
+    #result {
+        font-size: 1.2em;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <h1>Age Restriction Checker</h1>
+    <input type="text" id="ageInput" placeholder="Enter your age">
+    <button id="checkAge" onclick="checkAge()">Check Age to Drive</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function checkAge() {
+        let age = document.getElementById("ageInput").value;
+        let result = document.getElementById("result");
+        if (age === "") {
+            result.innerHTML = "Please enter your age.";
+            result.style.color = "black";
+            return;
+        }
+        age = parseInt(age);
+        if (isNaN(age) || age < 0) {
+            result.innerHTML = "Please enter a valid age.";
+            result.style.color = "red";
+            return;
+        }
+        if (age < 18) {
+            result.innerHTML = "you are not eligible to drive.";
+            result.style.color = "red";
+        } else {
+            result.innerHTML = "you are eligible to drive.";
+            result.style.color = "green";
+        }
+    }
+    </script>

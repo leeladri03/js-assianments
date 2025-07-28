@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reusable greeting function</title>
+</head>
+<body>
+    <h1>Reusable Greeting Function</h1>
+    <button onclick="greet('Alice')">Greet Alice</button>
+    <button onclick="greet('Bob')">Greet Bob</button>
+    <button onclick="greet('Charlie')">Greet Charlie</button>
+    <div id="greetingMessage"></div>
+    </body>
+<script>
+    function greet(name) {
+        const greetingMessage = document.getElementById("greetingMessage");
+        greetingMessage.textContent = "Hello, " + name + "!";
+        greetingMessage.style.color = "blue";
+        greetingMessage.style.fontSize = "20px";
+    }
+</script>

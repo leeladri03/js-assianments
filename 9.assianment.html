@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create a array of fruits for of</title>
+</head>
+<style>
+   body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        text-align: center;
+        padding: 50px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #218838;
+    }
+    #result {
+        font-size: 1.2em;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <h1>Array of Fruits</h1>
+    <button id="createArray" onclick="createArray()">Create Array</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function createArray() {
+        let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+        let result = document.getElementById("result");
+        result.innerHTML = "Fruits:<br>";
+        
+        for (let fruit of fruits) {
+            result.innerHTML += fruit + "<br>";
+        }
+        result.style.color = "blue";
+    }
+</script>

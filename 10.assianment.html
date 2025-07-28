@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of even number with while loop</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        text-align: center;
+        padding: 50px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #result {
+        font-size: 1.2em;
+        margin-top: 20px;
+        font-weight: bold;
+        color: green;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+</style>
+<body>
+    <h1>Sum of Even Numbers</h1>
+    <button id="calculateSum" onclick="calculateSum()">Calculate Sum</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function calculateSum() {
+        let sum = 0;
+        let i = 0;
+        while (i <= 50) {
+            if (i % 2 === 0) {
+                sum += i;
+            }
+            i++;
+        }
+        document.getElementById("result").innerHTML = "Sum of even numbers from 0 to 50 is:  " + sum;
+    }
+</script>

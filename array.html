@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array Example</h1>
+    <div id="arrayOutput"></div>
+
+    <script>
+        // let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+        // let output = document.getElementById("arrayOutput"); 
+        // fruits= fruits.splice(0, 4); 
+        // output.innerHTML = fruits;
+
+        // let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+        // // fruits.splice(1, 2, "Blueberry");
+        // let output = [fruits.splice(1,1, "Blueberry")];
+        // console.log(output);
+        // console.log(fruits);
+
+        // Slice = required only the location (start and end)
+        // Splice = required the location and the number of elements, new value( to be replaced) to be removed/replaced
+
+        const fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+        console.log(fruits);
+        const output = [fruits.splice(1, 1, "Blueberry")];
+        // fruits[3].push('orange');
+        console.log(output);
+        console.log(fruits);
+    </script>
+</body>
+</html>

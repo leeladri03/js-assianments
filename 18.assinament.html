@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle visibility</title>
+</head>
+<body>
+    <h1>Toggle Visibility</h1>
+    <button onclick="toggleVisibility()">Toggle Message</button>
+    <p id="toggleMessage">This is a toggleable message.</p>
+    <script>
+        function toggleVisibility() {
+            const message = document.getElementById("toggleMessage");
+            if (message.style.display === "none") {
+                message.style.display = "block";
+            } else {
+                message.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

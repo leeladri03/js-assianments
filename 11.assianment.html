@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("image/maths.jpg");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Print number from 10 to 1 using do.. while.</h1>
+        <button onclick="printNumbers()">Print Numbers</button>
+        <div id="result"></div>
+
+
+        <script>
+            function printNumbers() {
+                let result = document.getElementById("result");
+                result.innerHTML = "";
+                let i = 10;
+                do {
+                    result.innerHTML += i + "<br>";
+                    i--;
+                } while (i >= 1);
+            }
+        </script>
+    </div>
+</body>
+</html>

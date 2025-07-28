@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop through object representing car</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        text-align: center;
+        padding: 50px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #result {
+        font-size: 1.2em;
+        margin-top: 20px;
+        font-weight: bold;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+</style>
+<body>
+    <h1>create a Object Representing Car</h1>
+    <button id="createCar" onclick="createCar()">Create Car</button>
+    <p id="result"></p>
+
+
+</body>
+</html>
+<script>
+     function createCar() {
+        let car = {
+            name: "Toyota",
+            model: "Corolla",
+            year: 2020,
+            color: "Blue",
+            price: "20,00,000"
+        };
+        
+        let result = document.getElementById("result");
+        result.innerHTML = "Car Details:<br>";
+        
+        for (let key in car) {
+            result.innerHTML += key + ": " + car[key] + "<br>";
+        }
+        result.style.color = "green";
+    }
+
+</script>
+       

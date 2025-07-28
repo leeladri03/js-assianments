@@ -1,0 +1,321 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Salary Tracker</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #dfe9f3, #ffffff);
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    .form-container {
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      margin: 0 auto 40px;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 12px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border 0.3s;
+    }
+
+    .form-container input:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #1a252f;
+    }
+
+    @media screen and (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Employee Salary Tracker</h1>
+
+  <div class="form-container">
+    <input type="text" id="name" placeholder="Employee Name" required />
+    <input type="number" id="presentDays" placeholder="Present Days" required />
+    <input type="number" id="absentDays" placeholder="Absent Days" required />
+    <button onclick="calculateSalary()">Calculate Salary</button>
+    </div>
+    <script>
+      function calculateSalary() {
+        const name = document.getElementById('name').value;
+        const presentDays = parseInt(document.getElementById('presentDays').value);
+        const absentDays = parseInt(document.getElementById('absentDays').value);
+
+        if (!name || isNaN(presentDays) || isNaN(absentDays)) {
+          alert('Please fill in all fields correctly.');
+          return;
+        }
+
+        const salaryPerDay = 1000; // Example salary per day
+        const salary = presentDays * salaryPerDay;
+        alert(`${name}'s salary is ₹${salary.toLocaleString()} for ${presentDays} present days.`);
+      }
+    </script>
+    </body>
+    </html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Salary Tracker</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #70e1f5, #ffd194);
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: white;
+    }
+    .form-container {
+      max-width: 550px;
+      background: rgba(255, 255, 255, 0.97);
+      margin: 0 auto 40px;
+      padding: 25px 30px 15px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .form-container label {
+      flex: 1 1 100%;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #2c3e50;
+    }
+    .form-container input, .form-container select {
+      flex: 1 1 45%;
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      transition: border 0.3s;
+    }
+    .form-container input:focus, .form-container select:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+    .form-container button {
+      flex: 1 1 100%;
+      padding: 12px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .form-container button:hover {
+      background-color: #1a252f;
+    }
+    table {
+      width: 98%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      background-color: #2c3e50;
+      color: white;
+      font-weight: 600;
+    }
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+    @media screen and (max-width: 700px) {
+      .form-container {
+        flex-direction: column;
+        gap: 0;
+      }
+      .form-container input, .form-container select, .form-container button {
+        flex: 1 1 100%;
+      }
+      table, th, td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Employee Salary Tracker</h1>
+
+  <div class="form-container">
+    <label for="name">Employee Name</label>
+    <input type="text" id="name" placeholder="Employee Name" required />
+
+    <label for="month">Month</label>
+    <select id="month" required>
+      <option value="">Select Month</option>
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+
+    <label for="totalDays">Working Days</label>
+    <input type="number" id="totalDays" placeholder="Working Days (e.g., 30)" min="1" max="31" required />
+
+    <label for="absentDays">Absent Days</label>
+    <input type="number" id="absentDays" placeholder="Absent Days" min="0" required />
+
+    <button onclick="addEmployee()">Add Employee</button>
+  </div>
+
+  <table id="salaryTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Month</th>
+        <th>Working Days</th>
+        <th>Absent Days</th>
+        <th>Present Days</th>
+        <th>Salary (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Employee rows will be inserted here -->
+    </tbody>
+  </table>
+
+  <script>
+    const salaryPerDay = 1000;
+    const employees = [];
+
+    function addEmployee() {
+      const name = document.getElementById("name").value.trim();
+      const month = document.getElementById("month").value;
+
+      const totalDays = parseInt(document.getElementById("totalDays").value);
+      const absentDays = parseInt(document.getElementById("absentDays").value);
+
+      if (
+        name === "" ||
+        month === "" ||
+        isNaN(totalDays) ||
+        isNaN(absentDays) ||
+        absentDays > totalDays ||
+        totalDays <= 0 ||
+        absentDays < 0
+      ) {
+        alert("Please enter valid details.");
+        return;
+      }
+
+      const newEmployee = { name, month, totalDays, absent: absentDays };
+      employees.push(newEmployee);
+      updateTable();
+      clearForm();
+    }
+
+    function updateTable() {
+      const tbody = document.querySelector("#salaryTable tbody");
+      tbody.innerHTML = "";
+
+      employees.forEach(emp => {
+        const presentDays = emp.totalDays - emp.absent;
+        const salary = presentDays * salaryPerDay;
+
+        const row = `
+          <tr>
+            <td>${emp.name}</td>
+            <td>${emp.month}</td>
+            <td>${emp.totalDays}</td>
+            <td>${emp.absent}</td>
+            <td>${presentDays}</td>
+            <td>₹${salary.toLocaleString()}</td>
+          </tr>
+        `;
+        tbody.insertAdjacentHTML("beforeend", row);
+      });
+    }
+
+    function clearForm() {
+      document.getElementById("name").value = "";
+      document.getElementById("month").value = "";
+      document.getElementById("totalDays").value = "";
+      document.getElementById("absentDays").value = "";
+    }
+    </script>
+</body>
+</html>

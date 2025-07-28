@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter with Closure</title>
+</head>
+<body>
+    <h1>Counter with Closure</h1>
+    <button onclick="incrementCounter()">Increment Counter</button>
+    <p id="counterValue"></p>
+</body>
+<script>
+    // Closure counter
+    function createCounter() {
+        let count = 0;
+        return function() {
+            count++;
+            return count;
+        };
+    }
+
+    const counter = createCounter();
+
+    function incrementCounter() {
+        const value = counter();
+        document.getElementById("counterValue").textContent = "Counter: " + value;
+    }
+</script>
+</html>
+
