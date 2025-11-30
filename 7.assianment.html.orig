@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse string with for loop</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        text-align: center;
+        padding: 50px;
+    }
+    input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        margin-right: 10px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #result {
+        font-size: 1.2em;
+        margin-top: 20px;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+</style>
+<body>
+    <h1>Reverse String with For Loop</h1>
+    <input type="text" id="stringInput" placeholder="Enter a string">
+    <button id="reverseString" onclick="reverseString()">Reverse String</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function reverseString() {
+        let str = document.getElementById("stringInput").value;
+        let result = document.getElementById("result");
+        if (str === "") {
+            result.innerHTML = "Please enter a string.";
+            result.style.color = "black";
+            return;
+        }
+        let reversed = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+            reversed += str[i];
+        }
+        result.innerHTML = "Reversed string: " + reversed;
+        result.style.color = "blue";
+    }
+    </script>
